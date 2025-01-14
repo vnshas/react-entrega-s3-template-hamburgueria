@@ -1,14 +1,31 @@
 .listModal{
    display: flex;
    align-items: center;
-   flex-direction: column;
+   justify-content: space-between;
    border: none;    
-   height: 80px;     
+   height: 80px;
+   width: 100%;     
+   padding: 0 1rem;
     .cardModal{
+        width: 100%;
         display: flex;
         gap: 14px;
         align-items: center;
         justify-content: space-between;
-        
-   }
+        .cardImg{
+         
+         height: 80px;
+         background-color: var(--color-grey100);
+        }
+        .flexCard{
+            display: flex;
+            gap: 21px;
+        }
+    }
+    h3{
+        margin-top: 1rem;
+    }
+    button{
+        background-color: transparent;
+    }
 }

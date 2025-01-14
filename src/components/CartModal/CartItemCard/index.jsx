@@ -5,15 +5,17 @@ export const CartItemCard = ({ product, removeFromCart }) => {
    return (
      <li className={styles.listModal}>
       <div className={styles.cardModal}>
-         <img src={product.img} alt={product.name} />
-         <div>
-           <h3 className="title">{product.name}</h3>
-           <span className="paragraph green">
-             {product.price.toLocaleString("pt-BR", {
-               style: "currency",
-               currency: "BRL",
-             })}
-           </span>
+         <div className={styles.flexCard}>
+           <img className={styles.cardImg} src={product.img} alt={product.name} />
+           <div>
+             <h3 className="title">{product.name}</h3>
+             <span className="paragraph green">
+               {product.price.toLocaleString("pt-BR", {
+                 style: "currency",
+                 currency: "BRL",
+               })}
+             </span>
+           </div>
          </div>
 
          <button
@@ -21,7 +23,7 @@ export const CartItemCard = ({ product, removeFromCart }) => {
            aria-label="delete"
            title="Remover item"
          >
-           <MdDelete size={21} />
+           <MdDelete size={28} color="#BDBDBD" />
          </button>
        </div>
      </li>
