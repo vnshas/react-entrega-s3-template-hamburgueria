@@ -1,0 +1,58 @@
+header{
+    position: sticky;
+    top: 0;
+    background-color: var(--color-grey0);
+}
+
+.FlexBox{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    
+}
+
+.Cart{
+    display: flex;
+    gap: 2rem;
+    
+    button{
+        position: relative;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        span{
+            position: absolute;
+            font-size: .875rem;
+            font-weight: 900;
+            background-color: var(--color-primary);
+            color: var(--color-grey0);
+            height: 1.5rem;
+            width: 1.25rem;
+            border-radius: .4375rem;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            top: -10px;
+            right: -7px;
+        }
+        
+    }
+    form{
+        display: flex;
+        gap: .5rem;
+        input{
+            height: 2rem;
+            text-align:start;
+            padding: 1rem;
+            border: 1px solid var(--color-grey300);
+            border-radius: 6px;
+        }
+        input:focus{
+            border: (1px solid var(--color-primary));
+            outline: none;
+        }
+        
+    }
+
+    
+}

@@ -1,0 +1,22 @@
+.title{
+    font-size: 1.125rem;
+    font-family: var(--font-primary);
+    font-weight: 700;
+    line-height: 1.4;
+}
+
+.paragraph{
+    font-size: 0.875rem;
+    font-family: var(--font-primary);
+    font-weight: 600;
+    line-height: 1.8;
+}
+
+.paragraph.sm{
+    font-size: 0.75rem;
+    font-weight: 400;
+}
+
+.paragraph.green{
+    color: var(--color-primary);
+}
