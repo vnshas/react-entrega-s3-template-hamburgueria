@@ -69,7 +69,7 @@
     gap: 1rem;
     margin-top:1.5rem;
     border-top: 0.125rem solid var(--color-grey100);
-    width: clamp(18rem, 5vw, 28.125rem);
+    width: 28.125rem;
     div{
         margin-top: 1rem;
         display: flex;
@@ -80,7 +80,7 @@
         height: clamp(3rem, 5vw, 3.75rem);
         background-color: #BDBDBD;
         color: #FFFFFF;
-        width: clamp(100%,5vw,100%);
+        width:100%;
         border-radius: 0.5rem;
     }
 }
@@ -88,5 +88,8 @@
 @media(max-width:530px){
     .modalBox{
         max-width: 365px;
+    }
+    .totalCart{
+        width: 18rem;
     }
 }

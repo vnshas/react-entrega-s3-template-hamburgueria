@@ -1,19 +1,31 @@
 import { MdClose } from "react-icons/md";
 import { CartItemCard } from "./CartItemCard";
 import styles from "./style.module.scss"
+import { useEffect, useRef } from "react";
+import { useOutClick } from "../../hooks/useOutClick";
+import { useKeyDown } from "../../hooks/useKeyDown";
 
 export const CartModal = ({ cartList, removeFromCart, removeAllCart, setIsOpen }) => {
    const total =  cartList.reduce((prevValue, product) => {
       return prevValue + product.price;
    }, 0);
 
+   const modalRef = useOutClick(() =>{
+      setIsOpen(false)
+   })
+
+   
+   const buttonRef = useKeyDown("Escape", (element) => {
+      element.click()
+   })
+
    return (
       <div className={styles.modalOverlay} role="dialog">
-         <div className={styles.modalBox}>
+         <div ref={modalRef} className={styles.modalBox}>
             <div>   
                <div className={styles.Cart}>
                   <h2 className="title">Carrinho de compras</h2>
-                  <button className={styles.closeButton} onClick={() => setIsOpen(false) } aria-label="close" title="Fechar">
+                  <button ref={buttonRef} className={styles.closeButton} onClick={() => setIsOpen(false) } aria-label="close" title="Fechar">
                      <MdClose size={21} color="var(--color-grey0)"/>
                   </button>
                </div>

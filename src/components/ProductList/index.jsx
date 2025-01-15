@@ -1,7 +1,10 @@
+import { useRef,useEffect } from "react";
 import { ProductCard } from "./ProductCard";
 import styles from "./style.module.scss"
 
 export const ProductList = ({ productList, addToCart, filterProduct, value }) => {
+   
+   
    return (
       <div className="container">
          <ul>
