@@ -49,7 +49,9 @@ li{
     color: #868686;
    }
 }
-
+li:focus{
+    border: 2px solid var(--color-primary);
+}
 
 @media(max-width:1300px){
     li{
@@ -87,6 +89,6 @@ li{
 
 @media(max-width:550px){
     li{
-        width: 90%;
+        width: 16rem;
     }
 }
