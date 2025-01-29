@@ -17,5 +17,5 @@ export const ProductCard = ({ product, addToCart }) => {
           <button className="paragraph" onClick={() => addToCart(product)}>Adicionar</button>
         </div>
       </li>
-    );
+    )
 }

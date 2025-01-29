@@ -1,4 +1,4 @@
-import { MdDelete } from "react-icons/md";
+import { MdDelete } from "react-icons/md"
 import styles from "./style.module.scss"
 
 export const CartItemCard = ({ product, removeFromCart }) => {
@@ -27,5 +27,5 @@ export const CartItemCard = ({ product, removeFromCart }) => {
          </button>
        </div>
      </li>
-   );
-};
+   )
+}

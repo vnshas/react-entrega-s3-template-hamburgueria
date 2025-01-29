@@ -1,7 +1,7 @@
-import { useState } from "react";
-import Logo from "../../assets/Logo.svg";
-import { MdSearch, MdShoppingCart } from "react-icons/md";
-import { CartModal } from "../CartModal";
+import { useState } from "react"
+import Logo from "../../assets/Logo.svg"
+import { MdSearch, MdShoppingCart } from "react-icons/md"
+import { CartModal } from "../CartModal"
 import styles from "./style.module.scss"
 
 
@@ -42,5 +42,5 @@ export const Header = ({cartList, removeAllCart, removeFromCart, productList, va
             </div>
          </div>
       </header>
-   );
-};
+   )
+}

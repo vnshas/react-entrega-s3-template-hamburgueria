@@ -1,19 +1,15 @@
-import { useRef,useEffect } from "react";
-import { ProductCard } from "./ProductCard";
+import { useRef,useEffect } from "react"
+import { ProductCard } from "./ProductCard"
 import styles from "./style.module.scss"
 
-export const ProductList = ({ productList, addToCart, filterProduct, value }) => {
+export const ProductList = ({ children}) => {
    
    
    return (
       <div className="container">
          <ul>
-            {value !== "" ? filterProduct.map((product) => (
-               <ProductCard key={product.id} product={product} addToCart={addToCart} />
-            )) :productList.map((product) => (
-               <ProductCard key={product.id} product={product} addToCart={addToCart} />
-            ))}
+            {children}
          </ul>
       </div>
-   );
-};
+   )
+}

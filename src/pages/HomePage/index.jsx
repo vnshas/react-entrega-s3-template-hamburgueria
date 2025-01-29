@@ -1,13 +1,14 @@
-import { useEffect, useState } from "react";
-import { CartModal } from "../../components/CartModal";
-import { Header } from "../../components/Header";
-import { ProductList } from "../../components/ProductList";
+import { useEffect, useState } from "react"
+import { CartModal } from "../../components/CartModal"
+import { Header } from "../../components/Header"
+import { ProductList } from "../../components/ProductList"
+import { ProductCard } from "../../components/ProductList/ProductCard"
 
 export const HomePage = ({busca}) => {
-   const [productList, setProductList] = useState([]);
+   const [productList, setProductList] = useState([])
    const localCartList = localStorage.getItem("@CARTLIST")
-   const [cartList, setCartList] = useState(localCartList ? JSON.parse(localCartList) : []);
-   const [value, setValue] = useState("");
+   const [cartList, setCartList] = useState(localCartList ? JSON.parse(localCartList) : [])
+   const [value, setValue] = useState("")
    // useEffect montagem - carrega os produtos da API e joga em productList
 
    useEffect(() =>{
@@ -64,9 +65,15 @@ export const HomePage = ({busca}) => {
          
          <Header value={value} setValue={setValue} productList={productList} removeAllCart={removeAllCart} cartList={cartList} removeFromCart={removeFromCart}/>
          <main>
-         <ProductList productList={productList} addToCart={addToCart} filterProduct={filterProduct} value={value}/>
+         <ProductList >
+         {value !== "" ? filterProduct.map((product) => (
+               <ProductCard key={product.id} product={product} addToCart={addToCart} />
+            )) : productList.map((product) => (
+               <ProductCard key={product.id} product={product} addToCart={addToCart} />
+            ))}
+         </ProductList>
             
          </main>
       </>
-   );
-};
+   )
+}
