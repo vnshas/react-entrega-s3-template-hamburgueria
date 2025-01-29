@@ -61,19 +61,34 @@ export const HomePage = ({busca}) => {
    // estilizar tudo com sass de forma responsiva
 
    return (
-      <>
-         
-         <Header value={value} setValue={setValue} productList={productList} removeAllCart={removeAllCart} cartList={cartList} removeFromCart={removeFromCart}/>
-         <main>
-         <ProductList >
-         {value !== "" ? filterProduct.map((product) => (
-               <ProductCard key={product.id} product={product} addToCart={addToCart} />
-            )) : productList.map((product) => (
-               <ProductCard key={product.id} product={product} addToCart={addToCart} />
-            ))}
+     <>
+       <Header
+         value={value}
+         setValue={setValue}
+         productList={productList}
+         removeAllCart={removeAllCart}
+         cartList={cartList}
+         removeFromCart={removeFromCart}
+       />
+       <main>
+         <ProductList>
+           {value !== ""
+             ? filterProduct.map((product) => (
+                 <ProductCard
+                   key={product.id}
+                   product={product}
+                   addToCart={addToCart}
+                 />
+               ))
+             : productList.map((product) => (
+                 <ProductCard
+                   key={product.id}
+                   product={product}
+                   addToCart={addToCart}
+                 />
+               ))}
          </ProductList>
-            
-         </main>
-      </>
-   )
+       </main>
+     </>
+   );
 }
