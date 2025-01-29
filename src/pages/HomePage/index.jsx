@@ -90,5 +90,5 @@ export const HomePage = ({busca}) => {
          </ProductList>
        </main>
      </>
-   );
+   )
 }
