@@ -3,6 +3,7 @@ import { CartModal } from "../../components/CartModal"
 import { Header } from "../../components/Header"
 import { ProductList } from "../../components/ProductList"
 import { ProductCard } from "../../components/ProductList/ProductCard"
+import { api } from "../../services"
 
 export const HomePage = ({busca}) => {
    const [productList, setProductList] = useState([])
@@ -15,9 +16,8 @@ export const HomePage = ({busca}) => {
 
       const getProducts = async () => {
          try{
-            const response = await fetch ("https://hamburgueria-kenzie-json-serve.herokuapp.com/products")
-            const json = await response.json()
-            setProductList(json)
+            const { data }= await api.get("products") 
+            setProductList(data)
          }catch(error){
             console.log(error)
          }
@@ -36,9 +36,13 @@ export const HomePage = ({busca}) => {
 
    // adição, exclusão, e exclusão geral do carrinho
    const addToCart = (product) => {
-      const newProduct = {...product, id:crypto.randomUUID()}
-      const newCartList = [...cartList, newProduct]
-      setCartList(newCartList)
+      if(!cartList.includes(product)){
+         const newCartList = [...cartList, product]
+         setCartList(newCartList)
+      }else{
+         alert("Produto ja adicionado!")
+      }
+      
    }
 
    const removeFromCart = (removingID) =>{
