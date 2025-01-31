@@ -89,6 +89,12 @@ li:focus{
 
 @media(max-width:550px){
     li{
-        width: 16rem;
+        width: 12rem;
+    }
+}
+
+@media(max-width:450px){
+    li{
+        width: 20rem;
     }
 }

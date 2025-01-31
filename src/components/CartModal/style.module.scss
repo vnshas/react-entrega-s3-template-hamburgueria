@@ -87,9 +87,16 @@
 
 @media(max-width:530px){
     .modalBox{
-        max-width: 365px;
+        max-width: 415px;
     }
     .totalCart{
         width: 18rem;
     }
+}
+
+@media(max-width:450px){
+    .modalOverlay{
+        max-width: 25%;
+    }
+    
 }
